@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+      border: 5px solid black;
+      padding: 10px;
+      background-color: rgba(95, 160, 157, 0.404);
+    }
+    img{
+        display: block;
+        margin: auto;
+        max-width: 400px;
+        max-height: 400px;
+        border-radius: 100%;
+    }
+</style>
+<body>
+  <div class="container">
+  <img id="displayImage" src="https://img.freepik.com/free-icon/user_318-159711.jpg">
+  <br>
+  <center>
+  <input type="file" id="imageInput">
+  <button onclick="displayImage()">Display Image</button>
+  </center>
+  <br>
+</div>
+  <script>
+    function displayImage() {
+      var input = document.getElementById("imageInput");
+      var file = input.files[0];
+      var displayImg = document.getElementById("displayImage");
+
+      if (file) {
+        var imageURL = URL.createObjectURL(file);
+        displayImg.src = imageURL;
+      }
+    }
+  </script>
+</body>
+</html>
